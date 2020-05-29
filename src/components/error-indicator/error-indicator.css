@@ -1,0 +1,16 @@
+.error-indicator{
+  
+    color: coral;
+    margin: 0 auto;
+    height: 100%;
+    margin-top: 1em;
+}
+.error-indicator h5{
+    text-align: center;
+} 
+.icon-error{
+  
+    width: 35px;
+    height: 35px;
+   
+}

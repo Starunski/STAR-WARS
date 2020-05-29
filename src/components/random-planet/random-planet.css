@@ -1,0 +1,23 @@
+
+.random-planet{
+    display: flex;
+    margin: 0 auto;
+
+}
+
+
+.random-planet .card{
+    margin: 20px 20px;
+    
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.random-planet .planet-image{
+    margin: 20px 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+}

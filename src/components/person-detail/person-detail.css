@@ -1,0 +1,15 @@
+.personal-detail{
+padding-right: 20px;
+width: 100%;
+}
+
+.personal-detail .card{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+} 
+.personal-detail .personal-image{
+    margin: 10px 10px;
+    width: 150px;
+    height: 150px;
+}
