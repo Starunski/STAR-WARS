@@ -1,26 +1,59 @@
-import React from 'react'
-import './person-detail.css'
-const PersonDetail = () => {
-return (
-    <div className="personal-detail">
-    <div className="card">
-      <img
-        src="https://minskcena.com/files/products/c6c4ad18036559b409512eefe7f0fd9a.jpg"
-        className="card-img-top personal-image"
-      ></img>
+import React, { Component } from "react";
+import "./person-detail.css";
+import SwapiService from "../../services/swapi-service";
 
-      <div className="card-body">
-        <h5 className="card-title"> name </h5>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Gender: </li>
-          <li class="list-group-item">Date of Birthday: </li>
-          <li class="list-group-item">Eye colorred: </li>
-        </ul>
+export default class PersonDetail extends Component {
+  swapiServise = new SwapiService();
+
+  state = {
+    person: null,
+  };
+
+  componentDidMount() {
+    this.updatePerson();
+  }
+
+  componentDidUpdate(prevProps){
+    if(this.props.personId !== prevProps.personId){
+      this.updatePerson()
+    }
+  }
+
+  updatePerson() {
+    const { personId } = this.props;
+    if (!personId) {
+      return;
+    }
+    this.swapiServise.getPerson(personId).then((person) => {
+      this.setState({ person });
+    });
+  }
+
+  render() {
+    if (!this.state.person) {
+      return <span>Select a person from a list</span>;
+    }
+    const { id, name, gender, birthYear, eyeColor } = this.state.person;
+
+    return (
+      <div className="personal-detail">
+        <div className="card">
+          <img
+            src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
+            className="card-img-top personal-image"
+          ></img>
+
+          <div className="card-body">
+    <h5 className="card-title"> name {name} /  {this.props.personId} </h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Gender: {gender}</li>
+              <li class="list-group-item">Date of Birthday: {birthYear}</li>
+              <li class="list-group-item">Eye colorred: {eyeColor}</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-)
-
+    );
+  }
 }
 
-export default PersonDetail

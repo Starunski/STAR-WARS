@@ -2,7 +2,7 @@
   "name": "star-wars",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Starunski.github.io/STAR-WARS-REACT",
+  "homepage": "https://Starunski.github.io/star-wars",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

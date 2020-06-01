@@ -3,3 +3,7 @@
     margin-left: 20px;
 
 }
+.item-list .list-group :hover{
+    cursor: pointer;
+    color: coral;
+}
