@@ -5,7 +5,7 @@
     height: 100%;
     margin-top: 1em;
 }
-.error-indicator h5{
+.error-indicator h5,p {
     text-align: center;
 } 
 .icon-error{

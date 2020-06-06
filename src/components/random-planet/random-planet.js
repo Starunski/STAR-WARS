@@ -18,8 +18,11 @@ export default class RandomPlanet extends Component {
   componentDidMount(){
     this.updatePlanet();
     this.interval = setInterval(this.updatePlanet, 7700);
-      //  clearInterval(this.interval)
-   
+  
+  }
+
+  componentWillUnmount(){
+     clearInterval(this.interval)
   }
 
   onPlanetLoaded = (planet) => {
@@ -83,10 +86,10 @@ const PlanetView = ({ planet }) => {
 
         <div className="card-body">
           <h5 className="card-title">Name : {name}</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Population : {population} </li>
-            <li class="list-group-item">RotationPeriod : {rotationPeriod} </li>
-            <li class="list-group-item">Diameter : {diameter} </li>
+          <ul className="list-group list-group-flush">
+            <li className="list-group-item">Population : {population} </li>
+            <li className="list-group-item">RotationPeriod : {rotationPeriod} </li>
+            <li className="list-group-item">Diameter : {diameter} </li>
           </ul>
         </div>
       </div>

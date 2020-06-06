@@ -1,6 +1,8 @@
 
 .item-list{
     margin-left: 20px;
+    margin-bottom: 20px;
+
 
 }
 .item-list .list-group :hover{

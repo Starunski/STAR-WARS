@@ -1,0 +1,23 @@
+.item-detail {
+  width: 100%;
+  display: flex;
+}
+
+.item-detail .card {
+  display: flex;
+
+  margin: 0 auto;
+}
+.item-image {
+  margin: 10px 10px;
+  width: 31%;
+}
+.item-detail .card {
+  display: flex;
+  width: 100%;
+  flex-direction: initial;
+}
+
+.card-body{
+    width: 100%;
+}
