@@ -3,21 +3,40 @@ import "./random-planet.css";
 import SwapiServise from "../../services/swapi-service";
 import Spiner from "../spiner";
 import ErrorIndicator from "../error-indicator";
+import propTypes  from 'prop-types'
 
 export default class RandomPlanet extends Component {
   swapiServise = new SwapiServise();
+
+
+  static defaultProps = {
+    updateInterval: 10000
+  }
+
+  static propTypes = {
+    updatePlanet: propTypes.number
+    // (props,propName, componentName)=> {
+    //   const value = props[propName];
+    //   if(typeof value === 'number' && !isNaN(value)){
+    //     return null
+    //   }
+    // return new TypeError(`${componentName}: ${propName} must be number`)
+    // }
+
+  }
 
   state = {
     planet: {},
     loading: true,
     error: false,
   };
-
+ 
 
  
   componentDidMount(){
+    const {updateInterval} = this.props
     this.updatePlanet();
-    this.interval = setInterval(this.updatePlanet, 7700);
+    this.interval = setInterval(this.updatePlanet, updateInterval);
   
   }
 
@@ -71,7 +90,13 @@ export default class RandomPlanet extends Component {
       </div>
     );
   }
+
+  
 }
+// RandomPlanet.defaultProps = {     
+//   updateInterval: 10000
+// }
+
 
 const PlanetView = ({ planet }) => {
   const { id, name, population, rotationPeriod, diameter } = planet;
